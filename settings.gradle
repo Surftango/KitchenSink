@@ -1,0 +1,2 @@
+include ':app', ':ca-maa-android-sdk-debug'
+gradle.ext.camaaplugin = false

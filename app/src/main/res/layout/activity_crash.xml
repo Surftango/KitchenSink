@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.maa.ca.kitchensink.CrashActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="false"
+        android:layout_above="@+id/footer">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:id="@+id/container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/ibInfoCrashes"
+                android:src="@drawable/ic_info"
+                android:gravity="center"
+                android:background="@null" />
+
+            <TextView
+                android:id="@+id/tvCrashes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="@string/Crashes" />
+
+            <!--DummyView -->
+            <View
+                android:id="@+id/anchor"
+                android:layout_centerHorizontal="true"
+                android:layout_width="10dp"
+                android:layout_height="0dp"
+                android:layout_alignTop="@+id/bUncaughtException"
+                android:layout_alignBottom="@+id/bUncaughtException" />
+
+
+            <Button
+                android:id="@+id/bUncaughtException"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tvCrashes"
+                android:layout_alignRight="@id/anchor"
+                android:text="Unknown Error \n" />
+
+            <Button
+                android:id="@+id/bStackOverFlowError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/bUncaughtException"
+                android:layout_below="@id/tvCrashes"
+                android:layout_toRightOf="@id/anchor"
+                android:text="Stack Overflow Error" />
+
+            <Button
+                android:id="@+id/bArrayOutOfIndex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/bSegmentationFault"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@id/bUncaughtException"
+                android:layout_alignTop="@+id/bSegmentationFault"
+                android:text="Array Out Of Index" />
+
+            <Button
+                android:id="@+id/bSegmentationFault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bUncaughtException"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/bUncaughtException"
+                android:layout_toRightOf="@+id/bUncaughtException"
+                android:text="Segmentation Fault" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/in_app_feedback"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@+id/ibInfoInAppFeedback" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info"
+                android:layout_below="@id/bSegmentationFault"
+                android:id="@+id/ibInfoInAppFeedback"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:background="@null" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/screen_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

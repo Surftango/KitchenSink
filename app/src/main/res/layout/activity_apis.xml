@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maa.ca.kitchensink.APISActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer">
+
+        <TableLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <!--Setting of customer ID -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvCustomerID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/customer_id" />
+
+                    <ImageButton
+                        android:id="@+id/ibCustomerIDInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:src="@drawable/ic_info" />
+
+                    <Button
+                        android:id="@+id/bSetCustomerId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@id/ibCustomerIDInfo"
+                        android:text="@string/set" />
+
+                    <EditText
+                        android:id="@+id/etCustomerID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@id/bSetCustomerId"
+                        android:layout_toRightOf="@id/tvCustomerID"
+                        android:hint="CustID_native"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+            </TableRow>
+
+
+            <!--Setting of the customer location -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvCustomerLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/customer_location" />
+
+                    <ImageButton
+                        android:id="@+id/ibCustomerLocationInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:src="@drawable/ic_info" />
+
+                    <Button
+                        android:id="@+id/bSetCustomerLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@id/ibCustomerLocationInfo"
+                        android:text="@string/set" />
+
+                    <EditText
+                        android:id="@+id/etCustomerLocationCountry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/tvCustomerLocation"
+                        android:gravity="center"
+                        android:hint="  US "
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/etCustomerLocationZipCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/bSetCustomerLocation"
+                        android:layout_toRightOf="@id/etCustomerLocationCountry"
+                        android:gravity="center"
+                        android:hint="95051"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+
+            <!-- Adding Custom Event-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/tvSessionEvent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/custom_event" />
+
+                    <ImageButton
+                        android:id="@+id/ibSessionEvent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:src="@drawable/ic_info" />
+
+                    <Button
+                        android:id="@+id/bAddSessionEvent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@id/ibSessionEvent"
+                        android:text="@string/set" />
+
+                    <EditText
+                        android:id="@+id/etSessionEventName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/tvSessionEvent"
+                        android:gravity="center"
+                        android:hint="name"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/etSessionEventValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/bAddSessionEvent"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@id/etSessionEventName"
+                        android:gravity="center"
+                        android:hint="value"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+
+                    <Spinner
+                        android:id="@+id/etSessionEventDatatype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/bAddSessionEvent"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@id/bAddSessionEvent"
+                        android:layout_toRightOf="@id/etSessionEventValue"
+                        android:gravity="center"
+                        android:hint="data-type"/>
+
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <!--Add Session Attribute-->
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/tvSessionInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/session_info" />
+
+                    <ImageButton
+                        android:id="@+id/ibSessionInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:src="@drawable/ic_info" />
+
+                    <Button
+                        android:id="@+id/bAddSessionInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@id/ibSessionInfo"
+                        android:text="@string/set" />
+
+                    <EditText
+                        android:id="@+id/etSessionInfoName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/tvSessionInfo"
+                        android:gravity="center"
+                        android:hint="name"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/etSessionInfoValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@id/etSessionInfoName"
+                        android:gravity="center"
+                        android:hint="value"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/etSessionInfoDatatype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@id/bAddSessionInfo"
+                        android:layout_toRightOf="@id/etSessionInfoValue"
+                        android:gravity="center"
+                        android:hint="data-type"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+
+            <!-- LOG NETWORK EVENT -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/group_theme">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvNetworkInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/network_details"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etNetworkURL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/tvNetworkInfo"
+                        android:gravity="center"
+                        android:hint="network url"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/etNetworkDataOut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/tvNetworkInfo"
+                        android:gravity="center"
+                        android:hint="data-out"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/etNetworkDataIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvNetworkInfo"
+                        android:layout_toLeftOf="@id/etNetworkDataOut"
+                        android:gravity="center"
+                        android:hint="data-in"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/etNetworkResponseTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvNetworkInfo"
+                        android:layout_toLeftOf="@+id/etNetworkDataIn"
+                        android:gravity="center"
+                        android:hint="response time"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/etNetworkStatusCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvNetworkInfo"
+                        android:layout_toLeftOf="@+id/etNetworkResponseTime"
+                        android:layout_toRightOf="@+id/etNetworkURL"
+                        android:gravity="center"
+                        android:hint="status code"
+                        android:maxHeight="80dp"
+                        android:textSize="12dp" />
+
+                    <Button
+                        android:id="@+id/bLogNetworkEvent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/etNetworkURL"
+                        android:paddingTop="5dp"
+                        android:text="@string/log_network_event" />
+
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <!-- Enable  / Disable SDK -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/bEnableSDK"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:text="Enable SDK" />
+
+                    <Button
+                        android:id="@+id/bDisEnableSDK"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:text="Disable SDK" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <!-- TRANSACTION -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/group_theme">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/hTransaction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/transaction"
+                        android:textStyle="bold" />
+
+
+                    <ImageButton
+                        android:id="@+id/ibStartApplicationTransactionInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:src="@drawable/ic_info" />
+
+
+                    <EditText
+                        android:id="@+id/etTransactionServiceName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/hTransaction"
+                        android:hint="service name"
+                        android:textSize="14dp" />
+
+                    <EditText
+                        android:id="@+id/etApplicationTransactionName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/etTransactionServiceName"
+                        android:hint="application Transaction Name"
+                        android:textSize="14dp" />
+
+
+                    <EditText
+                        android:id="@+id/etApplicationTransactionFailureStringName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/etApplicationTransactionName"
+                        android:hint="stop Application Transaction failure string"
+                        android:textSize="14dp" />
+
+                    <Button
+                        android:id="@+id/bStartTransactionApplication"
+                        android:layout_width="124dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/etApplicationTransactionFailureStringName"
+                        android:layout_centerInParent="true"
+                        android:text="@string/start_application_transaction" />
+
+                    <Button
+                        android:id="@+id/bEndTransaction"
+                        android:layout_width="124dip"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/etApplicationTransactionFailureStringName"
+                        android:layout_centerInParent="true"
+                        android:text="@string/end_application_transaction" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <TableRow>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/hLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/Login"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/hLogin"
+                        android:hint="username=mdo" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/hLogin"
+                        android:hint="password=mdo" />
+
+                    <Button
+                        android:id="@+id/bLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@id/etUsername"
+                        android:paddingTop="5dp"
+                        android:text="Login" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <!-- Session -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/group_theme">
+
+                <LinearLayout android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/bStartSession"
+                        android:layout_width="124dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:text="@string/start_session" />
+
+                    <Button
+                        android:id="@+id/bStopSession"
+                        android:layout_width="124dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:text="@string/stop_session" />
+
+                    <Button
+                        android:id="@+id/bStopAndStartSession"
+                        android:layout_width="124dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:text="@string/stop_and_start_session" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/bUploadEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bStopAndStartSession"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/upload_event" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <Button
+                        android:id="@+id/btSendScreenShot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/send_screen_shot" />
+
+                    <EditText
+                        android:id="@+id/etSendScreenShotName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@id/btSendScreenShot"
+                        android:hint="screen name" />
+
+                </RelativeLayout>
+
+            </TableRow>
+
+            <!-- Pinning -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <Button
+                            android:id="@+id/btSetSSLPinning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/pin_cert" />
+
+                        <EditText
+                            android:id="@+id/etPEMCertificate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toLeftOf="@id/btSetSSLPinning"
+                            android:hint="Assets location of certs"
+                            android:text="" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <Button
+                            android:id="@+id/btSetBulkSSLPinning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/bulk_pin_cert" />
+
+                        <EditText
+                            android:id="@+id/etBulkPEMCertificate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toLeftOf="@id/btSetBulkSSLPinning"
+                            android:hint="Assets location of certs"
+                            android:text="" />
+
+                        <Button
+                            android:id="@+id/btRestSSLPinning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/etBulkPEMCertificate"
+                            android:text="@string/unpin_cert" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <Button
+                            android:id="@+id/getPinnedUrl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/get_request" />
+
+                        <EditText
+                            android:id="@+id/urlToCheckForPinning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toLeftOf="@id/getPinnedUrl"
+                            android:hint="https URL to test for pinning" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <Button
+                        android:id="@+id/userFeedBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/send_user_feedback" />
+
+                    <Spinner
+                        android:id="@+id/feedback_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/userFeedBack"
+                        android:hint="feedback-type"/>
+
+                    <EditText
+                        android:id="@+id/feedbackText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@id/feedback_type"
+                        android:hint="Generic Feedback text"
+                        android:text=""/>
+
+
+                </RelativeLayout>
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/screen_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

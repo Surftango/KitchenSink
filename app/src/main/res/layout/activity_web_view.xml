@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context="com.maa.ca.kitchensink.WebViewActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_alignParentTop="false">
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp">
+
+            <EditText
+                android:id="@+id/etWebViewUrlField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/bGo"
+                android:hint="@string/enter_url" />
+
+            <Button
+                android:id="@+id/bGo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/etWebViewUrlField"
+                android:layout_toLeftOf="@+id/bBack"
+                android:layout_alignParentTop="true"
+                android:text="@string/Go" />
+
+
+            <ImageButton
+                android:id="@+id/bBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/bForward"
+                android:src="@drawable/ic_menu_back"
+                />
+
+            <ImageButton
+                android:id="@+id/bForward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_menu_forward" />
+
+            <WebView
+                android:id="@+id/wvWebPage"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_above="@+id/bStackOverFlow"
+                android:layout_below="@id/etWebViewUrlField"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/bStackOverFlow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="@string/stackoverflow"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/bTechCrunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/bStackOverFlow"
+                android:text="@string/techcrunch"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/bYoutube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/bTechCrunch"
+                android:text="@string/youtube"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/bJSApi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/bYoutube"
+                android:text="@string/jsAPI"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include
+        layout="@layout/screen_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

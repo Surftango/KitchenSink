@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.maa.ca.kitchensink.TransactionActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="false"
+        android:layout_above="@+id/footer">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:id="@+id/container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="top">
+
+            <Button
+                android:id="@+id/bSampleButton"
+                android:text="Button"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/bSampleButton"
+                android:onClick="onButtonClickedTest"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSampleButton"
+                android:text="Button"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignBaseline="@id/bSampleButton" />
+
+            <com.maa.ca.kitchensink.custom.CustomButton
+                android:id="@+id/bCustomButton"
+                android:text="Custom Button"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSampleButton"
+                android:onClick="onCustomButtonClickedTest"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCustomButton"
+                android:text="Custom Button"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignBaseline="@id/bCustomButton" />
+
+            <SeekBar
+                android:id="@+id/bSeekBar"
+                android:layout_below="@id/bCustomButton"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/bSampleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSeekBar"
+                android:text="SeekBar"
+                android:layout_below="@id/bCustomButton"
+                android:layout_alignParentLeft="true"
+                android:layout_alignBaseline="@id/bSeekBar" />
+
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sampleswitch"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignLeft="@id/bSeekBar"
+                android:layout_below="@id/bSeekBar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Switch"
+                android:id="@+id/tvsampleswitch"
+                android:layout_alignBottom="@+id/sampleswitch"
+                android:layout_alignParentLeft="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mCheckbox"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignLeft="@id/sampleswitch"
+                android:layout_below="@id/sampleswitch" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checkbox"
+                android:id="@+id/tvsamplecheckbox"
+                android:layout_alignBottom="@+id/mCheckbox"
+                android:layout_alignParentLeft="true" />
+
+            <Spinner
+                android:id="@+id/planets_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mCheckbox"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spinner"
+                android:id="@+id/sample_spinner"
+                android:layout_alignBottom="@+id/planets_spinner"
+                android:layout_alignParentLeft="true"
+                />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/radio_grp"
+                android:layout_below="@id/planets_spinner"
+                android:layout_alignParentRight="true">
+                <RadioButton android:id="@+id/radio_pirates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pirates"
+                    android:onClick="onRadioButtonClicked">
+                </RadioButton>
+                <RadioButton android:id="@+id/radio_ninjas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ninjas"
+                    android:onClick="onRadioButtonClicked"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Radio Group"
+                android:id="@+id/tvsample_radiogrp"
+                android:layout_alignBottom="@+id/radio_grp"
+                android:layout_centerVertical="true"
+                />
+
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pbsamplebar"
+                android:layout_below="@id/radio_grp"
+                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@id/radio_grp" />
+
+            <TextView
+                android:id="@+id/tvProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progressbar"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/radio_grp"
+                android:layout_alignTop="@id/pbsamplebar" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Start Progress Bar"
+                android:layout_marginTop="10dp"
+                android:textSize="10dp"
+                android:id="@+id/bStartProgressBar"
+                android:layout_below="@id/tvProgressBar" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Stop Progress Bar"
+                android:id="@+id/bStopProgressBar"
+                android:layout_marginTop="10dp"
+                android:textSize="10dp"
+                android:layout_below="@id/tvProgressBar" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Private Zone"
+                android:id="@+id/bEnterPrivateZone"
+                android:layout_below="@id/bStartProgressBar"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Exit Private Zone"
+                android:id="@+id/bExitPrivateZone"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/bStopProgressBar" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/screen_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>

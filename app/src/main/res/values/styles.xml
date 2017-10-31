@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="colorAccent">@color/holo_blue</item>
+    </style>
+
+
+    <style name="Footer.Button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="colorButtonNormal">#F00</item>
+        <item name="android:textColor">#FFF</item>
+
+    </style>
+
+</resources>

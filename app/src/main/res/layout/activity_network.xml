@@ -1,0 +1,265 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.maa.ca.kitchensink.WebViewActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer"
+        android:layout_marginLeft="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginTop="29dp">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TableRow android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/group_theme"
+                android:layout_margin="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context="com.maa.ca.kitchensink.NetActivity"
+                    >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Protocol"
+                    android:id="@+id/lbProtocol"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignLeft="@+id/rbgProtocol"
+                    android:height="30dp"
+                    android:textAlignment="center"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Method"
+                    android:id="@+id/lbMethod"
+                    android:layout_below="@+id/rbgProtocol"
+                    android:layout_alignLeft="@+id/lbProtocol"
+                    android:layout_alignStart="@+id/lbProtocol"
+                    android:gravity="center"
+                    android:layout_alignParentTop="false"
+                    android:height="30dp"
+                    android:layout_alignParentLeft="false" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/lbProtocol"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:id="@+id/rbgProtocol">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HTTP"
+                        android:id="@+id/rbHttp"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HTTPS"
+                        android:id="@+id/rbHttps"
+                        android:checked="false" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/rbgMethod"
+                    android:layout_alignBottom="@+id/lbMethod"
+                    android:layout_alignRight="@+id/rbgProtocol"
+                    android:layout_alignEnd="@+id/rbgProtocol"
+                    android:layout_alignLeft="@+id/rbgProtocol"
+                    android:layout_alignStart="@+id/rbgProtocol">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GET"
+                        android:id="@+id/rbGet"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="POST"
+                        android:id="@+id/rbPost"
+                        android:checked="false" />
+                </RadioGroup>
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/size_bar"
+                    app:flexWrap="wrap"
+                    app:alignContent="stretch"
+                    app:alignItems="stretch"
+                    app:justifyContent="space_between"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lbMethod"
+                    android:layout_marginTop="31dp"
+                    >
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1KB"
+                        android:id="@+id/btn1Kb"/>
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10KB"
+                        android:id="@+id/btn10Kb" />
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100KB"
+                        android:id="@+id/btn100Kb"/>
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1MB"
+                        android:id="@+id/btn1Mb"/>
+
+                </com.google.android.flexbox.FlexboxLayout>
+                </RelativeLayout>
+
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/group_theme"
+                android:layout_margin="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                <RelativeLayout
+                    android:id="@+id/calltype_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="31dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Call Type"
+                        android:id="@+id/txtCallType"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center"
+                        />
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spnCallType"
+                        android:spinnerMode="dialog"
+                        android:layout_centerVertical="true"
+                        android:popupBackground="#ff8dc3ff"
+                        android:entries="@array/calltype_array"
+                        android:prompt="@string/calltype_prompt"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@id/txtCallType"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/url_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/calltype_section"
+                    android:layout_marginTop="31dp">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtUrl"
+                        android:text="http://google.com"
+                        android:layout_alignParentLeft="true"
+                        />
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Send"
+                        android:id="@+id/btnSend"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </RelativeLayout>
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Output"
+                    android:id="@+id/textView"
+                    android:gravity="center"
+                    android:height="30dp"
+                    android:layout_marginTop="34dp"
+                    android:layout_alignParentTop="true"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtOutput"
+                    android:background="#ffeaefff"
+                    android:minHeight="50dp"
+                    android:width="200dp"
+                    android:layout_below="@+id/textView"
+                    />
+                </RelativeLayout>
+            </TableRow>
+
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <include
+        layout="@layout/screen_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>

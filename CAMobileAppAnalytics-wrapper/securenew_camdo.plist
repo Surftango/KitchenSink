@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Application</key>
+	<array>
+		<dict>
+			<key>profileURL</key>
+			<string>https://collector-axa.cloud.ca.com/api/1/urn:ca:tenantId:029DF253-B671-40F3-BAF0-D7AEB0A9E5FD/urn:ca:appId:securenew/profile</string>
+			<key>baseURL</key>
+			<string>https://collector-axa.cloud.ca.com</string>
+			<key>collectorUploadURL</key>
+			<string>https://collector-axa.cloud.ca.com/api/1/urn:ca:tenantId:029DF253-B671-40F3-BAF0-D7AEB0A9E5FD/urn:ca:appId:securenew/mobileMetrics</string>
+			<key>keySize</key>
+			<string>2048</string>
+			<key>appId</key>
+			<string>securenew</string>
+			<key>tenantID</key>
+			<string>029DF253-B671-40F3-BAF0-D7AEB0A9E5FD</string>
+			<key>appKey</key>
+			<string>a9b20170-32ee-11e7-96a1-85f5b52ca380</string>
+			<key>cryptoURL</key>
+			<string>https://collector-axa.cloud.ca.com/api/1/urn:ca:tenantId:029DF253-B671-40F3-BAF0-D7AEB0A9E5FD/urn:ca:appId:securenew/key</string>
+			<key>encryptionKey</key>
+			<string>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArSQnkPeV3NnUxmQq3NaKQ+G+VQK40U/3puPECdoaDnMsG/rWrfn6E0Wd9xDFmwKk/9nbhUHXH+M7i1JumppjnC6+3czML75XmIVfanT4lhuvlrnael79NFLvx8+1/UAUZHBNml9p97JSKOfXejQQhrmppj6xfsZkhEIdHAVMkQHKSCCaFsXN+khso/HnlfD4Li9y2QhTBv/2x+PzzNG5iZvcB5vbnQEcpmHWYvT39EzkiHojhco00doTDPXfi7OPvmVyiE/WJ2w/GcJ66e5PQt7ra+19stsxpB5qDRca7NhL3GHmqm/a91F4qhazBOi+hP99DIrs7k9P98xHRlUJ+QIDAQAB</string>
+			<key>encryptionKeyVersion</key>
+			<string>1494138629007</string>
+			<key>algorithm</key>
+			<string>RSA</string>
+		</dict>
+	</array>
+</dict>
+</plist>

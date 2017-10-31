@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.maa.ca.kitchensink.TransactionActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="false"
+        android:layout_above="@+id/footer">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:id="@+id/container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="top">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEvents"
+                android:text="@string/generate_UI_event" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEvent1"
+                android:text="@string/event1"
+                android:layout_below="@id/tvEvents"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click Button"
+                android:id="@+id/bEventGenerator"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tvEvents" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEvent2"
+                android:text="@string/event2"
+                android:layout_below="@id/tvEvent1"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentLeft="true" />
+
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sbSeekBar"
+                android:layout_alignBaseline="@id/tvEvent2"
+                android:layout_below="@id/tvEvent1"
+                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@id/bEventGenerator" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEvent3"
+                android:text="@string/event3"
+                android:layout_alignBaseline="@+id/bSwitch"
+                android:layout_alignParentLeft="true" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/sbSeekBar"
+                android:id="@+id/bSwitch"
+                android:layout_marginTop="30dp"
+                android:layout_alignLeft="@id/sbSeekBar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/generate_network_event"
+                android:layout_below="@id/bSwitch"
+                android:id="@+id/tvGenerateNetworkEvent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="50dp" />
+
+            <Button
+                android:layout_below="@id/tvGenerateNetworkEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ping_google"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:id="@+id/bPingGoogle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/bPingGoogle"
+                android:text="Output"
+                android:id="@+id/tvOutput"
+                android:layout_marginTop="20dp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/screen_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

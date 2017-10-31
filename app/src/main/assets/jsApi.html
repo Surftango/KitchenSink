@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="chip-ui-android.css ">
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="chip-ui.js"></script>
+    <script src="CaMDOIntegration.js"></script>
+    <script src="CaMDOInterceptor.js"></script>
+</head>
+<body>
+<ul class='list'>
+    <li class='comp'>
+        <div>
+            <label for='customerId'>Customer ID:</label>
+        </div>
+        <aside>
+            <input id="customerId" type="text" name="customer.id" autocapitalize="off"
+                   autocorrect="off" size="15" placeholder="Ravi1234">
+        </aside>
+        <aside>
+            <button onclick="setCustomerId();">Set</button>
+        </aside>
+    </li>
+    <li class='comp'>
+        <div>
+            <label for='countryCode'>Customer Location:</label>
+        </div>
+        <aside>
+            <input id="countryCode" type="text" autocapitalize="off" autocorrect="off" size="3"
+                   placeholder="US">
+            <br>
+        </aside>
+        <aside>
+            <input id="zipCode" type="text" autocapitalize="off" autocorrect="off" size="8"
+                   placeholder="95051">
+        </aside>
+        <aside>
+            <button onclick="setCustomerLocation();">Set</button>
+        </aside>
+    </li>
+    <li class='comp'>
+        <div>
+            <label for='session_event_name'>Session Attributes:</label>
+        </div>
+        <aside>
+            <input id="session_event_name" type="text" placeholder="name" autocapitalize="off"
+                   autocorrect="off" size="3" hint="name"/>
+            <br>
+        </aside>
+        <aside>
+            <input id="session_event_value" type="text" placeholder="value" autocapitalize="off"
+                   autocorrect="off" size="8"/>
+        </aside>
+        <aside>
+            <input id="session_event_type" type="text" autocapitalize="off" autocorrect="off"
+                   size="8" placeholder="(optional)"/>
+            <br>
+        </aside>
+        <aside>
+            <button onclick="setSessionAttribute();">Set</button>
+        </aside>
+    </li>
+
+    <li class='comp'>
+        <div style="max-width: 1%;min-width: 0%;"></div>
+        <div style="min-width: 50%;">
+            <button onclick="enableSDK();">Enable SDK</button>
+        </div>
+        <div style="min-width: 50%;">
+            <button onclick="disableSDK();">Disable SDK</button>
+        </div>
+    </li>
+    <li class='comp'>
+        <div style="min-width: 100%;max-width: 100%;">
+            <input id="appTxName" size="102" type="text" autocapitalize="off" autocorrect="off"
+                   placeholder="Transaction Name"/>
+        </div>
+    </li>
+    <li class='comp'>
+        <div style="max-width: 1%;min-width: 0%;"></div>
+        <div style="min-width: 50%;">
+            <button onclick="startAppTransaction();">Start</button>
+        </div>
+        <div style="min-width: 50%;">
+            <button onclick="endAppTransaction();">End</button>
+        </div>
+    </li>
+    <li>
+        <h4>Take Screenshots</h4>
+        <br/>
+        <div style="min-width: 50%;">
+            <button onclick="checkScreenShot();">Check</button>
+        </div>
+        <div style="min-width: 50%;">
+            <button onclick="takeScreenShotH();">High</button>
+        </div>
+        <div style="min-width: 50%;">
+            <button onclick="takeScreenShotM();">Medium</button>
+        </div>
+        <div style="min-width: 50%;">
+            <button onclick="takeScreenShotL();">Low</button>
+        </div>
+    </li>
+    <li class='comp'>
+        <div>
+            <label>Upload Events:</label>
+        </div>
+        <aside>
+            <button onclick="uploadEvents();">Upload</button>
+        </aside>
+    </li>
+    <li class='comp'>
+        <div>
+            <label>Log network event</label>
+        </div>
+        <aside>
+            <button onclick="logNetworkEvent()">Network event</button>
+        </aside>
+    </li>
+    <li class='comp'>
+        <div>
+            <label>Send xmlhttp</label>
+        </div>
+        <aside>
+            <button onclick="setXMLHttp()">XMLhttp request</button>
+        </aside>
+    </li>
+    <li class='comp'>
+        <div>
+            <label>Error </label>
+        </div>
+        <aside>
+            <button onclick="throwError()">Send error</button>
+        </aside>
+    </li>
+</ul>
+
+<div data-role="page">
+    <div data-role="header">
+        <h1>Forms</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <form method="get" action="https://dxc-route-8080-axa-ng-unvdev1.app.unvdev1.cs.saas.ca.com//api/1/urn:ca:tenantId:D4A901ED-2E13-7934-1941-36795A00D392/urn:ca:appId:sugsh_dev/profile">
+            <fieldset data-role="collapsible">
+                <label>Get config:</label>
+                <input type="submit" data-inline="true" value="Submit">
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script>
+            var customerIdField = $('#customerId');
+            var customerLocCountryField=$('#countryCode');
+            var customerLocZipcodeField=$('#zipCode');
+
+            var sessionEventNameField=$('#session_event_name');
+            var sessionEventValueField=$('#session_event_value');
+            var sessionEventTypeField=$('#session_event_type');
+
+            var appTxNameField=$('#appTxName');
+
+        /*window.onerror = function(message, url, lineNumber,columnNumber,errorObj) {
+                nativeHook.showMessage("Error  "+message);
+        }*/
+
+            function throwError(){
+               var abc=null;
+               abc.val();
+            };
+            function setCustomerId(){
+               var  callback = function (action,returnValue,error){
+                    if(error){
+                      alert(error);
+                    }
+                };
+
+                 CaMDOIntegration.setCustomerId(customerIdField.val()
+                    ,callback);
+            };
+
+            function setXMLHttp(){
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                           if(this.status == 200){
+                            nativeHook.showMessage("Success ");
+                           }else {
+                           nativeHook.showMessage("Error: Status-"+this.status);
+                           }
+                        }
+                    };
+                    xhttp.open("GET", "foo1ter.png", true);
+                    xhttp.send();
+            }
+
+
+            function setCustomerLocation(){
+
+                CaMDOIntegration.setCustomerLocation({
+                    "zipCode" : customerLocZipcodeField.val(),
+                    "countryCode" :customerLocCountryField.val(),
+                },function (action,returnValue,error){
+                    if(!error){
+                      alert('customer location is set');
+                     }
+                });
+
+
+            }
+            function setSessionAttribute(){
+                var  callback = function (action,returnValue,error){
+                    if(error){
+                      alert('session attribute not added');
+                     }
+                };
+                CaMDOIntegration.setSessionAttribute({
+                     "key" : sessionEventNameField.val(),
+                     "value":sessionEventValueField.val()
+                     },callback);
+
+            }
+            function enableSDK(){
+                CaMDOIntegration.enableSDK(function (action,returnValue,error){
+                     alert('enable SDK finished returnVal='+returnValue+" error="+error);
+                });
+
+            }
+
+            function logNetworkEvent(){
+                var  callback = function (action,returnValue,error){
+                    if(error){
+                      alert('logNetworkEvent failed: '+error);
+                     }else{
+                      alert('logNetworkEvent succes: ');
+                     }
+                };
+                CaMDOIntegration.logNetworkEvent({
+                    "url" : "http://httpbin.org/"
+                    },callback);
+            }
+
+            function uploadEvents(){
+                CaMDOIntegration.uploadEvents();
+            }
+
+            function cssCallback(action,returnval,error) {
+                alert('In Callback of screenshot:  '+action+', val '+returnval);
+            }
+
+            function checkScreenShot(){
+                CaMDOIntegration.isScreenshotPolicyEnabled(cssCallback);
+
+            }
+
+              function takeScreenShotH(){
+                CaMDOIntegration.sendScreenShot('CKs High screenshot',CaMDOIntegration.quality.high);
+
+            }
+               function takeScreenShotM(){
+                CaMDOIntegration.sendScreenShot('CKs Medi screenshot',CaMDOIntegration.quality.medium);
+
+            }
+               function takeScreenShotL(){
+                CaMDOIntegration.sendScreenShot('CKs Low screenshot',CaMDOIntegration.quality.low);
+
+            }
+            function disableSDK(){
+                CaMDOIntegration.disableSDK(function (action,returnValue,error){
+                     alert('disable SDK finished returnVal='+returnValue+" error="+error);
+                });
+
+            }
+            function startAppTransaction(){
+
+                var  callback = function (action,returnValue,error){
+                    if(!error){
+                      alert('application transaction started');
+                     }
+                };
+                CaMDOIntegration.startApplicationTransaction({
+                   "transactionName" : appTxNameField.val(),
+                   "serviceName" : "KS-API_SCREEN"
+                },callback);
+            }
+            function endAppTransaction(){
+
+                var  callback = function (action,returnValue,error){
+                    if(!error){
+                      alert('application transaction ended');
+                     }
+                };
+                CaMDOIntegration.stopApplicationTransaction({
+                   "transactionName" : appTxNameField.val(),
+                   "serviceName" : "KS-API_SCREEN",
+                   "failure" : "failure-reason"
+                },callback);
+            }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.maa.ca.kitchensink">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+
+    <application
+        android:name=".KitchenSinkApp"
+        android:allowBackup="true"
+        android:icon="@drawable/icon_axa"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LauncherActivity"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NetActivity"
+            android:label="@string/title_activity_network" />
+        <activity
+            android:name=".CrashActivity"
+            android:label="@string/title_activity_crash" />
+        <activity
+            android:name=".WebViewActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
+            android:name=".APISActivity"
+            android:label="@string/title_activity_apis" />
+        <activity
+            android:name=".TransactionActivity"
+            android:label="@string/title_activity_transaction" />
+        <activity
+            android:name=".EventsActivity"
+            android:label="@string/title_activity_events" />
+        <activity
+            android:name=".AppInfoActivity"
+            android:label="@string/title_activity_app_info"></activity>
+        <activity
+            android:name=".FragmentActivity"
+            android:label="@string/title_fragment"></activity>
+
+	<activity
+            android:name=".BluetoothActivity"
+            android:label="@string/title_bluetooth_main" />
+
+        <activity
+            android:name=".Bluetooth.DeviceScanActivity"
+            android:label="@string/title_bluetooth_scan" />
+        <activity android:name=".Bluetooth.DeviceControlActivity"
+            android:label="@string/title_bluetooth_control" />
+        <service android:name=".Bluetooth.BluetoothLeService"
+            android:label="@string/title_bluetooth_service" />
+
+    </application>
+
+</manifest>

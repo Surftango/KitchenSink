@@ -1,0 +1,120 @@
+apply plugin: 'com.android.application'
+apply plugin: 'ca-maa-wrapper-plugin'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('/Users/sugsh04/.android/debug.keystore')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.maa.ca.kitchensink"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "2.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    productFlavors {
+        nonprod {
+            minSdkVersion 16
+            //applicationId 'com.maa.ca.kitchensinkstaging'
+            targetSdkVersion 24
+        }
+        prod {
+            minSdkVersion 16
+            //applicationId 'com.maa.ca.kitchensinkprod'
+            targetSdkVersion 24
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main.assets.srcDirs += "../maa-js-sdk/js"
+    }
+}
+
+task('guards', type: Exec) {
+    commandLine 'java ', '-jar', '/Library/Android/sdk/tools/proguard/lib/proguard.jar', '@proguard-rules.pro'
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.facebook.stetho:stetho:1.5.0'
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
+    compile 'com.google.android:flexbox:0.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    //compile project(':ca-maa-android-sdk-debug')
+}
+
+/*
+
+afterEvaluate {
+
+    android.applicationVariants.all { variant ->
+        def newWrapperTask = tasks.create(name: "${variant.name}MAAWrap", type: com.ca.android.wrapper.gradle.CAMAAWrapperTask)
+        newWrapperTask.ext.emmHome = 'CAMobileAppAnalytics-wrapper/emm'
+        newWrapperTask.ext.plistFilePath = 'CAMobileAppAnalytics-wrapper/securenew_camdo.plist'
+        //newWrapperTask.ext.signConfig = 'CAMobileAppAnalytics-wrapper/emm/conf/jarsigner.properties'
+        newWrapperTask.ext.verboseFlag = true;
+        newWrapperTask.ext.noResFlag = false;
+        variant.outputs.each { output ->
+            newWrapperTask.ext.apkFilePath = output.outputFile.toString()
+            newWrapperTask.dependsOn output.packageApplication
+        }
+        variant.assemble.dependsOn newWrapperTask
+
+    }
+
+}
+*/
+/*
+afterEvaluate {
+    android.applicationVariants.all { variant ->
+
+        if(variant.name == "prodDebug" || variant.name == "prodRelease"){
+            def newWrapperTask = tasks.create(name: "${variant.name}MAAWrap", type: com.ca.android.wrapper.gradle.CAMAAWrapperTask)
+            newWrapperTask.ext.emmHome = 'CAMobileAppAnalytics-wrapper/emm'
+            newWrapperTask.ext.plistFilePath = 'CAMobileAppAnalytics-wrapper/securenew_camdo.plist'
+            newWrapperTask.ext.signConfig = 'CAMobileAppAnalytics-wrapper/emm/conf/jarsigner.properties'
+            newWrapperTask.ext.verboseFlag = true;
+            newWrapperTask.ext.noResFlag = false;
+            variant.outputs.each { output ->
+                newWrapperTask.ext.apkFilePath = output.outputFile.toString()
+                newWrapperTask.dependsOn output.packageApplication
+            }
+            variant.assemble.dependsOn newWrapperTask
+        }else{
+            def newWrapperTask = tasks.create(name: "${variant.name}MAAWrap", type: com.ca.android.wrapper.gradle.CAMAAWrapperTask)
+            newWrapperTask.ext.emmHome = 'CAMobileAppAnalytics-wrapper/emm'
+            newWrapperTask.ext.plistFilePath = 'CAMobileAppAnalytics-wrapper/Sugsh04_test_camdo.plist'
+            newWrapperTask.ext.signConfig = 'CAMobileAppAnalytics-wrapper/emm/conf/jarsigner.properties'
+            newWrapperTask.ext.verboseFlag = true;
+            newWrapperTask.ext.noResFlag = false;
+            variant.outputs.each { output ->
+                newWrapperTask.ext.apkFilePath = output.outputFile.toString()
+                newWrapperTask.dependsOn output.packageApplication
+            }
+            variant.assemble.dependsOn newWrapperTask
+        }
+    }
+
+}
+*/

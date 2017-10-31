@@ -1,0 +1,596 @@
+<?xml version="1.0"?>
+<CA_SDK>
+
+    <regexReplacement  id="regexActivity">
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/app/Activity;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/app/Activity;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/app/Activity;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/app/Activity;</pattern>
+        <matcher>.super Landroid/app/Activity;</matcher>
+        <from>Landroid/app/Activity;</from>
+        <to>Lcom/ca/android/app/CaMDOActivity;</to>
+    </regexReplacement>
+    <regexReplacement  id="regexActivityGroup">
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/app/ActivityGroup;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/app/ActivityGroup;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/app/ActivityGroup;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/app/ActivityGroup;</pattern>
+        <matcher>.super Landroid/app/ActivityGroup;</matcher>
+        <from>Landroid/app/ActivityGroup;</from>
+        <to>Lcom/ca/android/app/CaMDOActivityGroup;</to>
+    </regexReplacement>
+    <regexReplacement  id="regexAccountAuthenticatorActivity">
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/accounts/AccountAuthenticatorActivity;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/accounts/AccountAuthenticatorActivity;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/accounts/AccountAuthenticatorActivity;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/accounts/AccountAuthenticatorActivity;</pattern>
+        <matcher>.super Landroid/accounts/AccountAuthenticatorActivity;</matcher>
+        <from>Landroid/accounts/AccountAuthenticatorActivity;</from>
+        <to>Lcom/ca/android/app/CaAccountAuthenticatorActivity;</to>
+    </regexReplacement>
+    <regexReplacement  id="regexListActivity">
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/app/ListActivity;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/app/ListActivity;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/app/ListActivity;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/app/ListActivity;</pattern>
+        <matcher>.super Landroid/app/ListActivity;</matcher>
+        <from>Landroid/app/ListActivity;</from>
+        <to>Lcom/ca/android/app/CaListActivity;</to>
+    </regexReplacement>
+    <regexReplacement  id="regexPreferenceActivity">
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/preference/PreferenceActivity;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/preference/PreferenceActivity;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/preference/PreferenceActivity;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/preference/PreferenceActivity;</pattern>
+        <matcher>.super Landroid/preference/PreferenceActivity;</matcher>
+        <from>Landroid/preference/PreferenceActivity;</from>
+        <to>Lcom/ca/android/app/CaPreferenceActivity;</to>
+    </regexReplacement>
+    <regexReplacement  id="regexAliasActivity">
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/app/AliasActivity;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/app/AliasActivity;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/app/AliasActivity;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/app/AliasActivity;</pattern>
+        <matcher>.super Landroid/app/AliasActivity;</matcher>
+        <from>Landroid/app/AliasActivity;</from>
+        <to>Lcom/ca/android/app/CaAliasActivity;</to>
+    </regexReplacement>
+    <regexReplacement  id="regexExpandableListActivity">
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/app/ExpandableListActivity;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/app/ExpandableListActivity;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/app/ExpandableListActivity;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/app/ExpandableListActivity;</pattern>
+        <matcher>.super Landroid/app/ExpandableListActivity;</matcher>
+        <from>Landroid/app/ExpandableListActivity;</from>
+        <to>Lcom/ca/android/app/CaExpandableListActivity;</to>
+    </regexReplacement>
+    <regexReplacement  id="regexNativeActivity">
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/app/NativeActivity;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/app/NativeActivity;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/app/NativeActivity;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/app/NativeActivity;</pattern>
+        <matcher>.super Landroid/app/NativeActivity;</matcher>
+        <from>Landroid/app/NativeActivity;</from>
+        <to>Lcom/ca/android/app/CaNativeActivity;</to>
+    </regexReplacement>
+    <regexReplacement  id="regexFragment"><!-- android/app/Fragment related instrumentation mapping -->
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/app/Fragment;</pattern>
+        <pattern>invoke-direct\s\{v(.*)\},\sLandroid/app/Fragment;</pattern>
+        <pattern>invoke-super\s\{p(.*)\},\sLandroid/app/Fragment;</pattern>
+        <pattern>invoke-super\s\{v(.*)\},\sLandroid/app/Fragment;</pattern>
+        <matcher>.super Landroid/app/Fragment;</matcher>
+        <from>Landroid/app/Fragment;</from>
+        <to>Lcom/ca/android/app/CaMDOFragment;</to>
+    </regexReplacement>
+
+
+    <classReplacement id="Activity">
+        <from>.super Landroid/app/Activity;</from>
+        <to>.super Lcom/ca/android/app/CaMDOActivity;</to>
+    </classReplacement>
+    <classReplacement id="ActivityGroup">
+        <from>.super Landroid/app/ActivityGroup;</from>
+        <to>.super Lcom/ca/android/app/CaMDOActivityGroup;</to>
+    </classReplacement>
+    <classReplacement id="AccountAuthenticatorActivity">
+        <from>.super Landroid/accounts/AccountAuthenticatorActivity;</from>
+        <to>.super Lcom/ca/android/app/CaAccountAuthenticatorActivity;</to>
+    </classReplacement>
+    <classReplacement id="ListActivity">
+        <from>.super Landroid/app/ListActivity;</from>
+        <to>.super Lcom/ca/android/app/CaListActivity;</to>
+    </classReplacement>
+    <classReplacement id="PreferenceActivity">
+        <from>.super Landroid/preference/PreferenceActivity;</from>
+        <to>.super Lcom/ca/android/app/CaPreferenceActivity;</to>
+    </classReplacement>
+    <classReplacement id="AliasActivity">
+        <from>.super Landroid/app/AliasActivity;</from>
+        <to>.super Lcom/ca/android/app/CaAliasActivity;</to>
+    </classReplacement>
+    <classReplacement id="ExpandableListActivity">
+        <from>.super Landroid/app/ExpandableListActivity;</from>
+        <to>.super Lcom/ca/android/app/CaExpandableListActivity;</to>
+    </classReplacement>
+    <classReplacement id="NativeActivity">
+        <from>.super Landroid/app/NativeActivity;</from>
+        <to>.super Lcom/ca/android/app/CaNativeActivity;</to>
+    </classReplacement>
+    <!-- android/app/Fragment related instrumentation mapping -->
+    <classReplacement id="Fragment">
+        <from>.super Landroid/app/Fragment;</from>
+        <to>.super Lcom/ca/android/app/CaMDOFragment;</to>
+    </classReplacement>
+
+    <classReplacement id="WebView">
+        <from>Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->loadUrl(Landroid/webkit/WebView;Ljava/lang/String;)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement id="WebView">
+        <from>Landroid/webkit/WebView;->postUrl(Ljava/lang/String;[B)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->postUrl(Landroid/webkit/WebView;Ljava/lang/String;[B)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement id="WebView">
+        <from>Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->loadUrl(Landroid/webkit/WebView;Ljava/lang/String;Ljava/util/Map;)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement id="WebView">
+        <from>Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->setWebViewClient(Landroid/webkit/WebView;Landroid/webkit/WebViewClient;)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <classReplacement id="WebView">
+        <from>Lti/modules/titanium/ui/widget/webview/TiUIWebView$TiWebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->setWebViewClient(Landroid/webkit/WebView;Landroid/webkit/WebViewClient;)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <classReplacement id="HTTP">
+        <from>Landroid/net/http/AndroidHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Landroid/net/http/AndroidHttpClient;Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement id="HTTP">
+        <from>Lorg/apache/http/impl/client/AbstractHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/AbstractHttpClient;Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <!-- execute(host,httpRequest); -->
+    <classReplacement id="DefaultHttpClient">
+        <from>Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/DefaultHttpClient;Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <!-- execute(host,httpRequest,context); -->
+    <classReplacement id="DefaultHttpClient">
+        <from>Lorg/apache/http/client/DefaultHttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/DefaultHttpClient;Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <!-- execute(host,httpRequest,responseHandler); -->
+    <classReplacement id="DefaultHttpClient">
+        <from>Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/client/ResponseHandler;)Ljava/lang/Object;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/DefaultHttpClient;Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/client/ResponseHandler;)Ljava/lang/Object;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <!-- execute(host,httpRequest,responseHandler,context); -->
+    <classReplacement id="DefaultHttpClient">
+        <from>Lorg/apache/http/client/DefaultHttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/client/ResponseHandler;Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/DefaultHttpClient;Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/client/ResponseHandler;Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <!-- execute(uriRequest ); -->
+    <classReplacement id="DefaultHttpClient">
+        <from>Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/DefaultHttpClient;Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <!-- execute(uriRequest,context ); -->
+    <classReplacement id="DefaultHttpClient">
+        <from>Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/DefaultHttpClient;Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <!-- execute(uriRequest,responseHandler ); -->
+    <classReplacement id="DefaultHttpClient">
+        <from>Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/client/ResponseHandler;)Ljava/lang/Object;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/DefaultHttpClient;Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/client/ResponseHandler;)Ljava/lang/Object;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <!-- execute(uriRequest,responseHandler,context ); -->
+    <classReplacement id="DefaultHttpClient">
+        <from>Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/client/ResponseHandler;Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/impl/client/DefaultHttpClient;Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/client/ResponseHandler;Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+
+    <classReplacement id="HTTP">
+        <from>Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/client/HttpClient;Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-interface</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <classReplacement id="HTTP">
+        <from>Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/client/HttpClient;Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-interface</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+    <classReplacement id="HTTP">
+        <from>Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/client/HttpClient;Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-interface</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement id="HTTP">
+        <from>Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->execute(Lorg/apache/http/client/HttpClient;Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;</to>
+        <methodFrom>invoke-interface</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement id="HTTP">
+        <from>Ljava/net/HttpURLConnection;->connect()V</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->connect(Ljava/net/HttpURLConnection;)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <!-- invoke-virtual {p1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection; -->
+    <classReplacement id="HTTP">
+        <from>Ljava/net/URL;->openConnection()Ljava/net/URLConnection;</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->openConnection(Ljava/net/URL;)Ljava/net/URLConnection;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <!-- invoke-virtual {v2}, Ljava/net/HttpURLConnection;->getResponseCode()I -->
+    <classReplacement id="HTTP">
+        <from>Ljava/net/HttpURLConnection;->getResponseCode()I</from>
+        <to>Lcom/ca/android/app/CaMDOHTTPClient;->getResponseCode(Ljava/net/HttpURLConnection;)I</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <!-- commented out CaMDOIntegration Smali , as we are replacing whole file -->
+
+    <classReplacement id="ProgressBar">
+        <from>Landroid/widget/ProgressBar;->setVisibility(I)V</from>
+        <to>Lcom/ca/android/app/CaMDOProgressBar;->setVisibility(Landroid/widget/ProgressBar;I)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <regexReplacement  id="regexSystemWebView">
+        <pattern>invoke-virtual\s\{(.*)\},\sLorg/apache/cordova/engine/SystemWebView;->setWebViewClient\(Landroid/webkit/WebViewClient;\)V</pattern>
+        <from>Lorg/apache/cordova/engine/SystemWebView;->setWebViewClient\(Landroid/webkit/WebViewClient;\)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->setWebViewClient(Landroid/webkit/WebView;Landroid/webkit/WebViewClient;)V</to>
+    </regexReplacement>
+    <!-- is dependent on above replacement do not change the order -->
+    <regexReplacement  id="regexSystemWebViewAnother">
+        <pattern>invoke-virtual\s\{(.*)\},\sLcom/ca/android/app/CaMDOWebView;->setWebViewClient\(Landroid/webkit/WebView;Landroid/webkit/WebViewClient;\)V</pattern>
+        <from>invoke-virtual</from>
+        <to>invoke-static</to>
+    </regexReplacement>
+
+     <classReplacement  id="crosswalk">
+        <from>Lorg/xwalk/core/internal/XWalkResourceClientInternal;->shouldInterceptLoadRequest(Lorg/xwalk/core/internal/XWalkViewInternal;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->shouldInterceptLoadRequest(Lorg/xwalk/core/internal/XWalkResourceClientInternal;Lorg/xwalk/core/internal/XWalkViewInternal;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement  id="crosswalk">
+        <from>Lorg/xwalk/core/internal/XWalkResourceClientInternal;->onReceivedResponseHeaders(Lorg/xwalk/core/internal/XWalkViewInternal;Lorg/xwalk/core/internal/XWalkWebResourceRequestInternal;Lorg/xwalk/core/internal/XWalkWebResourceResponseInternal;)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->onReceivedResponseHeaders(Lorg/xwalk/core/internal/XWalkResourceClientInternal;Lorg/xwalk/core/internal/XWalkViewInternal;Lorg/xwalk/core/internal/XWalkWebResourceRequestInternal;Lorg/xwalk/core/internal/XWalkWebResourceResponseInternal;)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement  id="crosswalk">
+        <from>Lorg/xwalk/core/internal/XWalkUIClientInternal;->onPageLoadStarted(Lorg/xwalk/core/internal/XWalkViewInternal;Ljava/lang/String;)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->onPageLoadStarted(Lorg/xwalk/core/internal/XWalkUIClientInternal;Lorg/xwalk/core/internal/XWalkViewInternal;Ljava/lang/String;)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+
+    <classReplacement  id="crosswalk">
+        <from>Lorg/xwalk/core/internal/XWalkUIClientInternal;->onPageLoadStopped(Lorg/xwalk/core/internal/XWalkViewInternal;Ljava/lang/String;Lorg/xwalk/core/internal/XWalkUIClientInternal$LoadStatusInternal;)V</from>
+        <to>Lcom/ca/android/app/CaMDOWebView;->onPageLoadStopped(Lorg/xwalk/core/internal/XWalkUIClientInternal;Lorg/xwalk/core/internal/XWalkViewInternal;Ljava/lang/String;Lorg/xwalk/core/internal/XWalkUIClientInternal$LoadStatusInternal;)V</to>
+        <methodFrom>invoke-virtual</methodFrom>
+        <methodTo>invoke-static</methodTo>
+    </classReplacement>
+  
+    <!-- End API variant with CallBack-->
+
+    <wrapperMethodInsert id="Fragment_onResume" targetFile="smali/android/support/v4/app/Fragment.smali">
+        <from>.method public onResume()V</from>
+        <to>.method public org_onResume()V</to>
+        <wrapperMethod>
+
+            .method public onResume()V
+            .locals 3
+
+            :try_start_0
+            invoke-virtual {p0}, Landroid/support/v4/app/Fragment;->org_onResume()V
+            :try_end_0
+            .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+            invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+            move-result-object v1
+
+            invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+            move-result-object v0
+
+            .local v0, "fragmentName":Ljava/lang/String;
+            invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+            move-result v1
+
+            if-eqz v1, :cond_0
+
+            :goto_0
+            invoke-virtual {p0}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+            move-result-object v1
+
+            invoke-static {v0, v1}, Lcom/ca/android/app/CaMDOIntegration;->onResumeOfFragment(Ljava/lang/String;Landroid/app/Activity;)V
+
+            return-void
+
+            :cond_0
+            invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+            move-result-object v1
+
+            invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+            move-result-object v0
+
+            goto :goto_0
+
+            .end local v0    # "fragmentName":Ljava/lang/String;
+            :catchall_0
+            move-exception v1
+
+            invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+            move-result-object v2
+
+            invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+            move-result-object v0
+
+            .restart local v0    # "fragmentName":Ljava/lang/String;
+            invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+            move-result v2
+
+            if-eqz v2, :cond_1
+
+            :goto_1
+            invoke-virtual {p0}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+            move-result-object v2
+
+            invoke-static {v0, v2}, Lcom/ca/android/app/CaMDOIntegration;->onResumeOfFragment(Ljava/lang/String;Landroid/app/Activity;)V
+
+            throw v1
+
+            :cond_1
+            invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+            move-result-object v2
+
+            invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+            move-result-object v0
+
+            goto :goto_1
+            .end method
+
+        </wrapperMethod>
+    </wrapperMethodInsert>
+
+    <wrapperMethodInsert id="Fragment_onPause" targetFile="smali/android/support/v4/app/Fragment.smali">
+        <from>.method public onPause()V</from>
+        <to>.method public org_onPause()V</to>
+        <wrapperMethod>
+
+            .method public onPause()V
+            .locals 3
+
+            :try_start_0
+            invoke-virtual {p0}, Landroid/support/v4/app/Fragment;->org_onPause()V
+            :try_end_0
+            .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+            invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+            move-result-object v1
+
+            invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+            move-result-object v0
+
+            .local v0, "fragmentName":Ljava/lang/String;
+            invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+            move-result v1
+
+            if-eqz v1, :cond_0
+
+            .line 39
+            :goto_0
+            invoke-virtual {p0}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+            move-result-object v1
+
+            invoke-static {v0, v1}, Lcom/ca/android/app/CaMDOIntegration;->onPauseOfFragment(Ljava/lang/String;Landroid/app/Activity;)V
+
+            return-void
+
+            :cond_0
+            invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+            move-result-object v1
+
+            invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+            move-result-object v0
+
+            goto :goto_0
+
+            .end local v0    # "fragmentName":Ljava/lang/String;
+            :catchall_0
+            move-exception v1
+
+            invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+            move-result-object v2
+
+            invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+            move-result-object v0
+
+            .restart local v0    # "fragmentName":Ljava/lang/String;
+            invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+            move-result v2
+
+            if-eqz v2, :cond_1
+
+            :goto_1
+            invoke-virtual {p0}, Landroid/support/v4/app/Fragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+            move-result-object v2
+
+            invoke-static {v0, v2}, Lcom/ca/android/app/CaMDOIntegration;->onPauseOfFragment(Ljava/lang/String;Landroid/app/Activity;)V
+
+            throw v1
+
+            :cond_1
+            invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+            move-result-object v2
+
+            invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+            move-result-object v0
+
+            goto :goto_1
+            .end method
+
+        </wrapperMethod>
+    </wrapperMethodInsert>
+
+    <wrapperMethodInsert id="Okhttp3_networkInterceptor" targetFile="$SMALI_DIR/okhttp3/OkHttpClient$Builder.smali">
+        <from>.method public build()Lokhttp3/OkHttpClient;</from>
+        <to>.method public org_build()Lokhttp3/OkHttpClient;</to>
+        <copyDir>
+            <from>plugins/smali/okhttp3/com</from>
+            <to>$SDK_SMALI_DIR/</to>
+        </copyDir>
+        <wrapperMethod>
+
+            .method public build()Lokhttp3/OkHttpClient;
+            .locals 2
+
+            const/4 v0, 0x0
+
+            .local v0, "client":Lokhttp3/OkHttpClient;
+            :try_start_0
+            new-instance v1, Lcom/ca/android/app/MAAInterceptor;
+
+            invoke-direct {v1}, Lcom/ca/android/app/MAAInterceptor;->&lt;init&gt;()V
+
+            invoke-virtual {p0, v1}, Lokhttp3/OkHttpClient$Builder;->addInterceptor(Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient$Builder;
+            :try_end_0
+            .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+            invoke-virtual {p0}, Lokhttp3/OkHttpClient$Builder;->org_build()Lokhttp3/OkHttpClient;
+
+            move-result-object v0
+
+            return-object v0
+
+            :catchall_0
+            move-exception v1
+
+            invoke-virtual {p0}, Lokhttp3/OkHttpClient$Builder;->org_build()Lokhttp3/OkHttpClient;
+
+            move-result-object v0
+
+            throw v1
+            .end method
+
+        </wrapperMethod>
+    </wrapperMethodInsert>
+
+
+    <specialReplacement id="screenshots">
+    <file>com/ca/android/app/JSCaMDOIntegration.smali</file>
+    <pattern>.annotation\sruntime</pattern>
+    <from>.annotation runtime Landroid/webkit/JavascriptInterface;</from>
+    <to>.annotation runtime Lorg/xwalk/core/JavascriptInterface;</to>
+    </specialReplacement>
+
+    <!-- CaMDOWebViewClient to extend SystemWebViewClient -->
+    <wrapperMethodInsert id="Cordova_SystemWebViewClient_const" targetFile="smali/org/apache/cordova/engine/SystemWebViewClient.smali">
+        <from></from>
+        <to></to>
+        <wrapperMethod>
+            .method public constructor &lt;init&gt;()V
+            .locals 0
+
+            .prologue
+            .line 100
+            invoke-direct {p0}, Landroid/webkit/WebViewClient;->&lt;init&gt;()V
+
+            .line 101
+            return-void
+            .end method
+        </wrapperMethod>
+    </wrapperMethodInsert>
+
+    <specialReplacement id="CaMDOWebviewClient">
+        <file>com/ca/android/app/CaMDOWebViewClient.smali</file>
+        <pattern>.super\s</pattern>
+        <from>.super Landroid/webkit/WebViewClient;</from>
+        <to>.super Lorg/apache/cordova/engine/SystemWebViewClient;</to>
+    </specialReplacement>
+
+    <specialReplacement id="CaMDOWebviewClient_inner">
+        <file>com/ca/android/app/CaMDOWebViewClient.smali</file>
+        <pattern>invoke-direct\s\{p(.*)\},\sLandroid/webkit/WebViewClient;</pattern>
+        <from>Landroid/webkit/WebViewClient;</from>
+        <to>Lorg/apache/cordova/engine/SystemWebViewClient;</to>
+    </specialReplacement>
+
+</CA_SDK>

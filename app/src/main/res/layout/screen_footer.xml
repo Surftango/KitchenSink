@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/footer"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    style="@android:style/ButtonBar"
+    app:flexWrap="wrap"
+    app:alignContent="stretch"
+    app:alignItems="stretch"
+    android:background="@drawable/footer_theme">
+
+    <Button
+        android:id="@+id/bCrashActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crash"
+        android:textSize="10dp"
+        app:layout_alignSelf="center"
+        app:justifyContent="center"
+        style="@style/Footer.Button"/>
+
+    <Button
+        android:id="@+id/bNetworkActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Network"
+        android:textSize="10dp"
+        app:layout_alignSelf="center"
+        app:justifyContent="center"
+        style="@style/Footer.Button"/>
+
+    <Button
+        android:id="@+id/bWebViewActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WebView"
+        android:textSize="10dp"
+        app:layout_alignSelf="center"
+        app:justifyContent="center"
+        style="@style/Footer.Button"/>
+
+    <Button
+        android:id="@+id/bEventsActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Events"
+        android:textSize="10dp"
+        app:layout_alignSelf="center"
+        app:justifyContent="center"
+        style="@style/Footer.Button"/>
+
+    <Button
+        android:id="@+id/bAPIsActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="API"
+        android:textSize="10dp"
+        app:layout_alignSelf="center"
+        app:justifyContent="center"
+        style="@style/Footer.Button"/>
+
+    <Button
+        android:id="@+id/bFragmentActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_but"
+        android:textSize="10dp"
+        app:layout_alignSelf="center"
+        app:justifyContent="center"
+        style="@style/Footer.Button"/>
+
+    <Button android:id="@+id/bBluetoothActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BTH"
+        android:textSize="10dp"
+        app:layout_alignSelf="center"
+        app:justifyContent="center"
+        style="@style/Footer.Button"/>
+
+</com.google.android.flexbox.FlexboxLayout>
